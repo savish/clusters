@@ -1,5 +1,7 @@
 # Clusters
 
+[![Build Status](https://travis-ci.com/savish/clusters.svg?branch=master)](https://travis-ci.com/savish/clusters)
+
 Useful traits for clustering algorithms.
 
 This library can be used as a basis for implementing a wide variety of 'distance' based clustering algorithms, such as [DBSCAN](1).
