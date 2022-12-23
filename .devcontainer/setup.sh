@@ -1,0 +1,36 @@
+## update and install some things we should probably have
+apt-get update
+apt-get install -y \
+  curl \
+  git \
+  gnupg2 \
+  jq \
+  sudo \
+  zsh \
+  vim \
+  build-essential \
+  openssl
+
+## update and install 2nd level of packages
+apt-get install -y pkg-config
+
+## Install rustup and common components
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+export PATH=/root/.cargo/bin:$PATH
+rustup install stable
+rustup component add rustfmt
+rustup component add clippy
+
+cargo install cargo-expand
+cargo install cargo-edit
+
+## setup and install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cp -R /root/.oh-my-zsh /home/$USERNAME
+cp /root/.zshrc /home/$USERNAME
+sed -i -e "s/\/root\/.oh-my-zsh/\/home\/$USERNAME\/.oh-my-zsh/g" /home/$USERNAME/.zshrc
+chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zshrc
+
+## setup and install starship prompt
+curl -sS https://starship.rs/install.sh | sh
+echo 'eval "$(starship init zsh)"' >> /home/$USERNAME/.zshrc
