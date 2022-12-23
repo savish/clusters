@@ -64,5 +64,5 @@ pub trait Algorithm<T> {
     /// To accomodate the various required parameters of different algorithms,
     /// it is expected that this trait is implemented by types that have
     /// access to their requirements. For instance, as fields in a struct.
-    fn cluster(&self, clusterables: &[T]) -> Box<Clustered<T>>;
+    fn cluster(&self, clusterables: &[T]) -> Box<dyn Clustered<T>>;
 }
