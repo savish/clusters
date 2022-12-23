@@ -10,5 +10,6 @@
 	"settings": {
 		"editor.formatOnSave": true,
 		"terminal.integrated.defaultProfile.linux": "zsh"
-	}
+	},
+	"postAttachCommand": "exec zsh"
 }
