@@ -9,6 +9,7 @@ apt-get install -y \
   zsh \
   vim \
   build-essential \
+  libssl-dev \
   openssl
 
 ## update and install 2nd level of packages
@@ -32,5 +33,5 @@ sed -i -e "s/\/root\/.oh-my-zsh/\/home\/$USERNAME\/.oh-my-zsh/g" /home/$USERNAME
 chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zshrc
 
 ## setup and install starship prompt
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 echo 'eval "$(starship init zsh)"' >> /home/$USERNAME/.zshrc
