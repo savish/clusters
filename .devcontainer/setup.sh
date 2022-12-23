@@ -32,6 +32,3 @@ cp /root/.zshrc /home/$USERNAME
 sed -i -e "s/\/root\/.oh-my-zsh/\/home\/$USERNAME\/.oh-my-zsh/g" /home/$USERNAME/.zshrc
 chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zshrc
 
-## setup and install starship prompt
-curl -sS https://starship.rs/install.sh | sh -s -- -y
-echo 'eval "$(starship init zsh)"' >> /home/$USERNAME/.zshrc
