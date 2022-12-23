@@ -2,19 +2,13 @@
 	"name": "Clusters",
 	"extensions": [
 		"cschleiden.vscode-github-actions",
-		"matklad.rust-analyzer",
+		"rust-lang.rust-analyzer",
 		"serayuzgur.crates",
 		"vadimcn.vscode-lldb"
 	],
 	"dockerFile": "Dockerfile",
 	"settings": {
 		"editor.formatOnSave": true,
-		"terminal.integrated.profiles.linux": {
-			"zsh (login)": {
-			  "path": "zsh",
-			  "args": ["-l"]
-			}
-		},
-		"terminal.integrated.defaultProfile.linux": "zsh (login)"
+		"terminal.integrated.defaultProfile.linux": "zsh"
 	}
 }
